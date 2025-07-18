@@ -15,49 +15,8 @@
             max-width: 1200px;
             margin: auto;
         }
-        .lottery-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .lottery-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .lottery-button:hover {
-            background-color: #0056b3;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .modal-content {
-            background-color: #1c2526;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-        }
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: white;
+        .lottery-section {
+            margin-bottom: 40px;
         }
         .lottery-table, .history-table {
             width: 100%;
@@ -78,546 +37,453 @@
             color: orange;
         }
         h2, h3 {
-            color: white;
+            color: #333;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Data Keluaran Lotre Terkini</h1>
-        <div class="lottery-list">
-            <button class="lottery-button" onclick="openModal('hongkongModal')">Hong Kong (HK Pools)</button>
-            <button class="lottery-button" onclick="openModal('singaporeModal')">Singapore (SGP)</button>
-            <button class="lottery-button" onclick="openModal('cambodiaModal')">Cambodia (GD Lotto)</button>
-            <button class="lottery-button" onclick="openModal('sydneyModal')">Sydney (SDY)</button>
-            <button class="lottery-button" onclick="openModal('taiwanModal')">Taiwan</button>
-            <button class="lottery-button" onclick="openModal('malaysiaModal')">Malaysia (Magnum 4D)</button>
-            <button class="lottery-button" onclick="openModal('macauModal')">Macau (Toto Macau)</button>
-            <button class="lottery-button" onclick="openModal('japanModal')">Japan</button>
-            <button class="lottery-button" onclick="openModal('vietnamModal')">Vietnam (Hanoi)</button>
-            <button class="lottery-button" onclick="openModal('laosModal')">Laos</button>
-        </div>
 
-        <!-- Modal untuk setiap pasaran -->
         <!-- Hongkong -->
-        <div id="hongkongModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('hongkongModal')">×</span>
-                <h2>Hong Kong (HK Pools) Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">1234</td>
-                            <td contenteditable="true">234</td>
-                            <td contenteditable="true">34</td>
-                            <td contenteditable="true">12</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
-                        <tr><td>2025-07-17</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
-                        <tr><td>2025-07-16</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
-                        <tr><td>2025-07-15</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
-                        <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
-                        <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
-                        <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Hong Kong (HK Pools) Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">1234</td>
+                        <td contenteditable="true">234</td>
+                        <td contenteditable="true">34</td>
+                        <td contenteditable="true">12</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
+                    <tr><td>2025-07-17</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
+                    <tr><td>2025-07-16</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
+                    <tr><td>2025-07-15</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
+                    <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Singapore -->
-        <div id="singaporeModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('singaporeModal')">×</span>
-                <h2>Singapore (SGP) Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">4321</td>
-                            <td contenteditable="true">321</td>
-                            <td contenteditable="true">21</td>
-                            <td contenteditable="true">43</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>4321</td><td>321</td><td>21</td><td>43</td></tr>
-                        <tr><td>2025-07-17</td><td>8765</td><td>765</td><td>65</td><td>87</td></tr>
-                        <tr><td>2025-07-16</td><td>2109</td><td>109</td><td>09</td><td>21</td></tr>
-                        <tr><td>2025-07-15</td><td>6543</td><td>543</td><td>43</td><td>65</td></tr>
-                        <tr><td>2025-07-14</td><td>0987</td><td>987</td><td>87</td><td>09</td></tr>
-                        <tr><td>2025-07-13</td><td>5432</td><td>432</td><td>32</td><td>54</td></tr>
-                        <tr><td>2025-07-12</td><td>9876</td><td>876</td><td>76</td><td>98</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Singapore (SGP) Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">4321</td>
+                        <td contenteditable="true">321</td>
+                        <td contenteditable="true">21</td>
+                        <td contenteditable="true">43</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>4321</td><td>321</td><td>21</td><td>43</td></tr>
+                    <tr><td>2025-07-17</td><td>8765</td><td>765</td><td>65</td><td>87</td></tr>
+                    <tr><td>2025-07-16</td><td>2109</td><td>109</td><td>09</td><td>21</td></tr>
+                    <tr><td>2025-07-15</td><td>6543</td><td>543</td><td>43</td><td>65</td></tr>
+                    <tr><td>2025-07-14</td><td>0987</td><td>987</td><td>87</td><td>09</td></tr>
+                    <tr><td>2025-07-13</td><td>5432</td><td>432</td><td>32</td><td>54</td></tr>
+                    <tr><td>2025-07-12</td><td>9876</td><td>876</td><td>76</td><td>98</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Cambodia -->
-        <div id="cambodiaModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('cambodiaModal')">×</span>
-                <h2>Cambodia (GD Lotto) Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">5678</td>
-                            <td contenteditable="true">678</td>
-                            <td contenteditable="true">78</td>
-                            <td contenteditable="true">56</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
-                        <tr><td>2025-07-17</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
-                        <tr><td>2025-07-16</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
-                        <tr><td>2025-07-15</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
-                        <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
-                        <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
-                        <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Cambodia (GD Lotto) Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">5678</td>
+                        <td contenteditable="true">678</td>
+                        <td contenteditable="true">78</td>
+                        <td contenteditable="true">56</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
+                    <tr><td>2025-07-17</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
+                    <tr><td>2025-07-16</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
+                    <tr><td>2025-07-15</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
+                    <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Sydney -->
-        <div id="sydneyModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('sydneyModal')">×</span>
-                <h2>Sydney (SDY) Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">8765</td>
-                            <td contenteditable="true">765</td>
-                            <td contenteditable="true">65</td>
-                            <td contenteditable="true">87</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>8765</td><td>765</td><td>65</td><td>87</td></tr>
-                        <tr><td>2025-07-17</td><td>4321</td><td>321</td><td>21</td><td>43</td></tr>
-                        <tr><td>2025-07-16</td><td>2109</td><td>109</td><td>09</td><td>21</td></tr>
-                        <tr><td>2025-07-15</td><td>6543</td><td>543</td><td>43</td><td>65</td></tr>
-                        <tr><td>2025-07-14</td><td>0987</td><td>987</td><td>87</td><td>09</td></tr>
-                        <tr><td>2025-07-13</td><td>5432</td><td>432</td><td>32</td><td>54</td></tr>
-                        <tr><td>2025-07-12</td><td>9876</td><td>876</td><td>76</td><td>98</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Sydney (SDY) Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">8765</td>
+                        <td contenteditable="true">765</td>
+                        <td contenteditable="true">65</td>
+                        <td contenteditable="true">87</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>8765</td><td>765</td><td>65</td><td>87</td></tr>
+                    <tr><td>2025-07-17</td><td>4321</td><td>321</td><td>21</td><td>43</td></tr>
+                    <tr><td>2025-07-16</td><td>2109</td><td>109</td><td>09</td><td>21</td></tr>
+                    <tr><td>2025-07-15</td><td>6543</td><td>543</td><td>43</td><td>65</td></tr>
+                    <tr><td>2025-07-14</td><td>0987</td><td>987</td><td>87</td><td>09</td></tr>
+                    <tr><td>2025-07-13</td><td>5432</td><td>432</td><td>32</td><td>54</td></tr>
+                    <tr><td>2025-07-12</td><td>9876</td><td>876</td><td>76</td><td>98</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Taiwan -->
-        <div id="taiwanModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('taiwanModal')">×</span>
-                <h2>Taiwan Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">2345</td>
-                            <td contenteditable="true">345</td>
-                            <td contenteditable="true">45</td>
-                            <td contenteditable="true">23</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
-                        <tr><td>2025-07-17</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
-                        <tr><td>2025-07-16</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
-                        <tr><td>2025-07-15</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
-                        <tr><td>2025-07-14</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
-                        <tr><td>2025-07-13</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
-                        <tr><td>2025-07-12</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Taiwan Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">2345</td>
+                        <td contenteditable="true">345</td>
+                        <td contenteditable="true">45</td>
+                        <td contenteditable="true">23</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
+                    <tr><td>2025-07-17</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
+                    <tr><td>2025-07-16</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
+                    <tr><td>2025-07-15</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
+                    <tr><td>2025-07-14</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
+                    <tr><td>2025-07-13</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
+                    <tr><td>2025-07-12</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Malaysia -->
-        <div id="malaysiaModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('malaysiaModal')">×</span>
-                <h2>Malaysia (Magnum 4D) Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">6789</td>
-                            <td contenteditable="true">789</td>
-                            <td contenteditable="true">89</td>
-                            <td contenteditable="true">67</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
-                        <tr><td>2025-07-17</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
-                        <tr><td>2025-07-16</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
-                        <tr><td>2025-07-15</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
-                        <tr><td>2025-07-14</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
-                        <tr><td>2025-07-13</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
-                        <tr><td>2025-07-12</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Malaysia (Magnum 4D) Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">6789</td>
+                        <td contenteditable="true">789</td>
+                        <td contenteditable="true">89</td>
+                        <td contenteditable="true">67</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
+                    <tr><td>2025-07-17</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
+                    <tr><td>2025-07-16</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
+                    <tr><td>2025-07-15</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
+                    <tr><td>2025-07-14</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
+                    <tr><td>2025-07-13</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
+                    <tr><td>2025-07-12</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Macau -->
-        <div id="macauModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('macauModal')">×</span>
-                <h2>Macau (Toto Macau) Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">9012</td>
-                            <td contenteditable="true">012</td>
-                            <td contenteditable="true">12</td>
-                            <td contenteditable="true">90</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
-                        <tr><td>2025-07-17</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
-                        <tr><td>2025-07-16</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
-                        <tr><td>2025-07-15</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
-                        <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
-                        <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
-                        <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Macau (Toto Macau) Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">9012</td>
+                        <td contenteditable="true">012</td>
+                        <td contenteditable="true">12</td>
+                        <td contenteditable="true">90</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
+                    <tr><td>2025-07-17</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
+                    <tr><td>2025-07-16</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
+                    <tr><td>2025-07-15</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
+                    <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Japan -->
-        <div id="japanModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('japanModal')">×</span>
-                <h2>Japan Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">3456</td>
-                            <td contenteditable="true">456</td>
-                            <td contenteditable="true">56</td>
-                            <td contenteditable="true">34</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
-                        <tr><td>2025-07-17</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
-                        <tr><td>2025-07-16</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
-                        <tr><td>2025-07-15</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
-                        <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
-                        <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
-                        <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Japan Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">3456</td>
+                        <td contenteditable="true">456</td>
+                        <td contenteditable="true">56</td>
+                        <td contenteditable="true">34</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
+                    <tr><td>2025-07-17</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
+                    <tr><td>2025-07-16</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
+                    <tr><td>2025-07-15</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
+                    <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Vietnam -->
-        <div id="vietnamModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('vietnamModal')">×</span>
-                <h2>Vietnam (Hanoi) Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">7890</td>
-                            <td contenteditable="true">890</td>
-                            <td contenteditable="true">90</td>
-                            <td contenteditable="true">78</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
-                        <tr><td>2025-07-17</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
-                        <tr><td>2025-07-16</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
-                        <tr><td>2025-07-15</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
-                        <tr><td>2025-07-14</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
-                        <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
-                        <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Vietnam (Hanoi) Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">7890</td>
+                        <td contenteditable="true">890</td>
+                        <td contenteditable="true">90</td>
+                        <td contenteditable="true">78</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
+                    <tr><td>2025-07-17</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
+                    <tr><td>2025-07-16</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
+                    <tr><td>2025-07-15</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
+                    <tr><td>2025-07-14</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Laos -->
-        <div id="laosModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('laosModal')">×</span>
-                <h2>Laos Results Today</h2>
-                <br>
-                <table class="lottery-table">
-                    <thead>
-                        <tr>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable="true">1234</td>
-                            <td contenteditable="true">234</td>
-                            <td contenteditable="true">34</td>
-                            <td contenteditable="true">12</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <h3>History (Last 7 Days)</h3>
-                <br>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>4D</th>
-                            <th>3D</th>
-                            <th>2D></th>
-                            <th><2D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2025-07-18</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
-                        <tr><td>2025-07-17</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
-                        <tr><td>2025-07-16</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
-                        <tr><td>2025-07-15</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
-                        <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
-                        <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
-                        <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="lottery-section">
+            <h2>Laos Results Today</h2>
+            <table class="lottery-table">
+                <thead>
+                    <tr>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">1234</td>
+                        <td contenteditable="true">234</td>
+                        <td contenteditable="true">34</td>
+                        <td contenteditable="true">12</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>4D</th>
+                        <th>3D</th>
+                        <th>2D></th>
+                        <th><2D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>1234</td><td>234</td><td>34</td><td>12</td></tr>
+                    <tr><td>2025-07-17</td><td>5678</td><td>678</td><td>78</td><td>56</td></tr>
+                    <tr><td>2025-07-16</td><td>9012</td><td>012</td><td>12</td><td>90</td></tr>
+                    <tr><td>2025-07-15</td><td>3456</td><td>456</td><td>56</td><td>34</td></tr>
+                    <tr><td>2025-07-14</td><td>7890</td><td>890</td><td>90</td><td>78</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>345</td><td>45</td><td>23</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>789</td><td>89</td><td>67</td></tr>
+                </tbody>
+            </table>
         </div>
     </div>
-
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        // Tutup modal jika klik di luar konten
-        window.onclick = function(event) {
-            const modals = document.getElementsByClassName('modal');
-            for (let modal of modals) {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            }
-        }
-    </script>
 </body>
-  </html>
+    </html>
