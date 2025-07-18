@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faylotto - Data Keluaran Lotre Terkini</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%);
+            color: #e0e0ff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: rgba(20, 20, 40, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-logo img {
+            height: 50px;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 5px #00f0ff);
+        }
+        .navbar-logo span {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00f0ff;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+        }
+        .navbar-links a {
+            color: #e0e0ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .navbar-links a:hover {
+            color: #00f0ff;
+            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .lottery-section {
+            margin-bottom: 50px;
+            background: rgba(30, 30, 50, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+        }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            color: #00f0ff;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+            margin-bottom: 40px;
+        }
+        h3 {
+            color: #e0e0ff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Table Styles */
+        .history-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(40, 40, 60, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .history-table th, .history-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        .history-table th {
+            background: linear-gradient(45deg, #00f0ff, #007bff);
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .history-table td {
+            color: #e0e0ff;
+            transition: background 0.3s ease;
+        }
+        .history-table td:first-child {
+            color: #ff8c00;
+            font-weight: 600;
+        }
+        .history-table tr:hover td {
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: rgba(20, 20, 40, 0.9);
+            backdrop-filter: blur(10px);
+            color: #e0e0ff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .footer p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #00f0ff;
+            text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .footer a:hover {
+            color: #ff8c00;
+            text-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
+            }
+            .navbar-logo span {
+                font-size: 22px;
+            }
+            .navbar-links {
+                margin-top: 15px;
+            }
+            .navbar-links a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            .history-table th, .history-table td {
+                font-size: 12px;
+                padding: 8px;
+            }
+            .lottery-section {
+                padding: 15px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="https://via.placeholder.com/50" alt="Faylotto Logo">
+            <span>Faylotto</span>
+        </div>
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#results">Results</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Faylotto - Data Keluaran Lotre Terkini</h1>
+
+        <!-- Tabel 1: Hongkong, Singapore, Cambodia -->
+        <div class="lottery-section">
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Hong Kong (HK Pools)</th>
+                        <th>Singapore (SGP)</th>
+                        <th>Cambodia (GD Lotto)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>1234</td><td>4321</td><td>5678</td></tr>
+                    <tr><td>2025-07-17</td><td>5678</td><td>8765</td><td>1234</td></tr>
+                    <tr><td>2025-07-16</td><td>9012</td><td>2109</td><td>9012</td></tr>
+                    <tr><td>2025-07-15</td><td>3456</td><td>6543</td><td>3456</td></tr>
+                    <tr><td>2025-07-14</td><td>7890</td><td>0987</td><td>7890</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>5432</td><td>2345</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>9876</td><td>6789</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabel 2: Sydney, Taiwan, Malaysia -->
+        <div class="lottery-section">
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Sydney (SDY)</th>
+                        <th>Taiwan</th>
+                        <th>Malaysia (Magnum 4D)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>8765</td><td>2345</td><td>6789</td></tr>
+                    <tr><td>2025-07-17</td><td>4321</td><td>6789</td><td>2345</td></tr>
+                    <tr><td>2025-07-16</td><td>2109</td><td>1234</td><td>1234</td></tr>
+                    <tr><td>2025-07-15</td><td>6543</td><td>5678</td><td>5678</td></tr>
+                    <tr><td>2025-07-14</td><td>0987</td><td>9012</td><td>9012</td></tr>
+                    <tr><td>2025-07-13</td><td>5432</td><td>3456</td><td>3456</td></tr>
+                    <tr><td>2025-07-12</td><td>9876</td><td>7890</td><td>7890</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabel 3: Macau, Japan, Vietnam -->
+        <div class="lottery-section">
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Macau (Toto Macau)</th>
+                        <th>Japan</th>
+                        <th>Vietnam (Hanoi)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>9012</td><td>3456</td><td>7890</td></tr>
+                    <tr><td>2025-07-17</td><td>5678</td><td>9012</td><td>3456</td></tr>
+                    <tr><td>2025-07-16</td><td>1234</td><td>5678</td><td>9012</td></tr>
+                    <tr><td>2025-07-15</td><td>3456</td><td>1234</td><td>5678</td></tr>
+                    <tr><td>2025-07-14</td><td>7890</td><td>7890</td><td>1234</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>2345</td><td>2345</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>6789</td><td>6789</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabel 4: Laos, China, Bullseye -->
+        <div class="lottery-section">
+            <h3>History (Last 7 Days)</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Laos</th>
+                        <th>China</th>
+                        <th>Bullseye</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-07-18</td><td>1234</td><td>4567</td><td>7890</td></tr>
+                    <tr><td>2025-07-17</td><td>5678</td><td>8901</td><td>2345</td></tr>
+                    <tr><td>2025-07-16</td><td>9012</td><td>1234</td><td>6789</td></tr>
+                    <tr><td>2025-07-15</td><td>3456</td><td>5678</td><td>1234</td></tr>
+                    <tr><td>2025-07-14</td><td>7890</td><td>9012</td><td>3456</td></tr>
+                    <tr><td>2025-07-13</td><td>2345</td><td>3456</td><td>5678</td></tr>
+                    <tr><td>2025-07-12</td><td>6789</td><td>7890</td><td>9012</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 Faylotto. All Rights Reserved.</p>
+        <p>Kontak: <a href="mailto:support@faylotto.com">support@faylotto.com</a></p>
+        <p>Ikuti kami: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+    </div>
+</body>
+                  </html>
