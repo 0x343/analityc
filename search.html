@@ -7,313 +7,349 @@
     <link href="img/logo.svg" rel="icon">
     <link href="img/logo.svg" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
-    <style>
+       <style>
         body {
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 1300px;
-    background-color: #000;
-    color: #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-    font-size: 16px;
-    padding-top: 70px;
-}
-        
-.container {
-    width: 100%;
-    max-width: 1300px;
-    margin: auto;
-    padding: 20px;
-    background: #000000;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    box-sizing: border-box;
-    align-items: center;
-    margin-top: 20px;
-}
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #000;
+            color: #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            font-size: 16px;
+            padding-top: 70px;
+            position: relative;
+        }
 
-h1, h2 {
-    background: linear-gradient(90deg, #03a9f4, #f441a5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        /* Background Particle Effect */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent;
+        }
 
-h3 {
-    color: white;
-    font-size: 17px;
-    text-shadow: 0px 0px 10px #00aaff, 0px 0px 20px #0088ff;
-}
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
 
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    overflow-x: auto;
-    display: block;
-    max-width: 100%;
-}
+        h1, h2 {
+            background: linear-gradient(90deg, #03a9f4, #f441a5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-th, td {
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: left;
-    font-size: 14px;
-}
+        h3 {
+            color: white;
+            font-size: 17px;
+            text-shadow: 0px 0px 10px #00aaff, 0px 0px 20px #0088ff;
+        }
 
-th {
-    background: linear-gradient(135deg, rgba(245, 245, 220, 0.3), rgba(255, 255, 255, 0.1));
-    color: white;
-    backdrop-filter: blur(10px);
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.6);
-    transition: box-shadow 0.3s ease-in-out;
-}
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            overflow-x: auto;
+            display: block;
+            max-width: 100%;
+        }
 
-th:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 255, 1);
-}
+        th, td {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+            font-size: 14px;
+        }
 
-@media screen and (max-width: 600px) {
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
+        th {
+            background: linear-gradient(135deg, rgba(245, 245, 220, 0.3), rgba(255, 255, 255, 0.1));
+            color: white;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.6);
+            transition: box-shadow 0.3s ease-in-out;
+        }
 
-    th, td {
-        padding: 8px;
-        font-size: 12px;
-    }
+        th:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 255, 1);
+        }
 
-    button {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
+        #searchInput {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 10px 15px 10px 40px;
+            font-size: 16px;
+            color: white;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.6);
+            outline: none;
+            transition: box-shadow 0.3s ease-in-out;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23ffffff" d="M508.5 481.6l-129.9-129.9c31.2-41.8 49.9-93.9 49.9-150.6C428.5 90.4 338.1 0 222.5 0S16.5 90.4 16.5 201.1s90.4 201.1 201.1 201.1c56.7 0 108.8-18.7 150.6-49.9l129.9 129.9c6.2 6.2 16.4 6.2 22.6 0l22.6-22.6c6.3-6.2 6.3-16.4.1-22.6zM60.5 201.1c0-89.5 72.6-162.1 162.1-162.1s162.1 72.6 162.1 162.1-72.6 162.1-162.1 162.1-162.1-72.6-162.1-162.1z"/></svg>'); 
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: 10px center;
+        }
 
-#searchInput {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    padding: 10px 15px 10px 40px;
-    font-size: 16px;
-    color: white;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.6);
-    outline: none;
-    transition: box-shadow 0.3s ease-in-out;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23ffffff" d="M508.5 481.6l-129.9-129.9c31.2-41.8 49.9-93.9 49.9-150.6C428.5 90.4 338.1 0 222.5 0S16.5 90.4 16.5 201.1s90.4 201.1 201.1 201.1c56.7 0 108.8-18.7 150.6-49.9l129.9 129.9c6.2 6.2 16.4 6.2 22.6 0l22.6-22.6c6.3-6.2 6.3-16.4.1-22.6zM60.5 201.1c0-89.5 72.6-162.1 162.1-162.1s162.1 72.6 162.1 162.1-72.6 162.1-162.1 162.1-162.1-72.6-162.1-162.1z"/></svg>'); 
-    background-repeat: no-repeat;
-    background-size: 20px;
-    background-position: 10px center;
-}
+        #searchInput:focus {
+            box-shadow: 0 0 20px rgba(0, 0, 255, 1);
+        }
 
-#searchInput:focus {
-    box-shadow: 0 0 20px rgba(0, 0, 255, 1);
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1300px;
+            z-index: 1000;
+            height: 60px;
+        }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px);
-    padding: 10px 20px;
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 1250px;
-    z-index: 1000;
-    height: 60px;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+            filter: drop-shadow(0 0 10px #00f0ff);
+            transition: transform 0.4s ease;
+        }
 
-.logo-img {
-    height: 40px;
-    margin-right: 10px;
-}
+        .logo-img:hover {
+            transform: rotate(360deg);
+        }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
 
-.nav-links a:hover {
-    color: #00ff66;
-}
+        .nav-links a:hover {
+            color: #00ff66;
+            text-shadow: 0 0 10px #00ff66;
+        }
 
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
 
-.hamburger:hover {
-    transform: rotate(90deg) scale(1.2);
-    color: #00ff66;
-}
+        .hamburger:hover {
+            transform: rotate(90deg) scale(1.2);
+            color: #00ff66;
+        }
 
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
+        footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            color: #ddd;
+            padding: 20px;
+            width: 100%;
+            max-width: 1300px;
+            margin: 20px auto 0;
+            box-shadow: 0 -4px 15px rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #222;
-        width: 200px;
-        padding: 10px;
-        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-        transition: transform 0.3s ease-in-out;
-    }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
 
-    .nav-links.show {
-        display: flex;
-        flex-direction: column;
-        transform: translateX(0);
-        animation: slideIn 0.3s ease-in-out;
-    }
-}
+        .social-icons a {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform 0.5s ease, text-shadow 0.5s ease, box-shadow 0.5s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.6);
+            backdrop-filter: blur(10px);
+        }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-        
-    footer {
-        text-align: center;
-        align-items: center;
-        margin-top: 20px;
-        padding: 10px;
-        background: #111;
-        color: #ddd;
-        font-size: 12px;
-        width: 100%;
-        max-width: 1225px;
-    }
+        .social-icons a:hover {
+            color: #1a88ff;
+            text-shadow: 0 0 10px #1a88ff, 0 0 20px #1a88ff, 0 0 30px #1a88ff;
+            box-shadow: 0 0 20px rgba(0, 0, 255, 1), 0 0 30px rgba(0, 0, 255, 0.8);
+            transform: rotate(360deg);
+        }
 
-    .social-icons {
-        margin-bottom: 10px;
-    }
+        @media (max-width: 768px) {
+            body {
+                padding-top: 80px;
+            }
+            .navbar {
+                padding: 10px 15px;
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(10px);
+                width: 200px;
+                padding: 10px;
+                box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+                transition: transform 0.3s ease-in-out;
+            }
+            .nav-links.show {
+                display: flex;
+                transform: translateX(0);
+                animation: slideIn 0.3s ease-in-out;
+            }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td {
+                padding: 8px;
+                font-size: 12px;
+            }
+            .container {
+                padding: 15px;
+            }
+            footer {
+                padding: 15px;
+            }
+            .social-icons {
+                gap: 10px;
+            }
+            .social-icons a {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
 
-    .social-icons a {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 15px;
-    margin: 0 5px;
-    text-decoration: none;
-    transition: transform 0.5s ease, text-shadow 0.5s ease, box-shadow 0.5s ease;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.6);
-    backdrop-filter: blur(10px);
-}
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-.social-icons a:hover {
-    color: #1a88ff;
-    text-shadow: 0 0 10px #1a88ff, 0 0 20px #1a88ff, 0 0 30px #1a88ff;
-    box-shadow: 0 0 20px rgba(0, 0, 255, 1), 0 0 30px rgba(0, 0, 255, 0.8);
-    transform: rotate(360deg);
-}
-    </style>
+        @keyframes neon-pulse {
+            0% { text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff; }
+            100% { text-shadow: 0 0 20px #00f0ff, 0 0 30px #ff00ff; }
+        }
+       </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    
-<nav class="navbar">
-    <div class="logo">
-        <img src="img/logo.svg" alt="Lotto Chain Logo" class="logo-img">
-        <span style="
-    font-size: 22px; 
-    font-weight: bold; 
-    background: linear-gradient(90deg, #03a9f4, #f441a5); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-">
-    Faylotto
-        </span>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-    <ul class="nav-links" id="navMenu">
-        <a href="index">Statistics</a>
-        <a href="tools">Tools</a>
-        <a href="#searchInput">Search</a>
-        <a href="https://app.faylotto.xyz">Play Bet</a>
-    </ul>
-</nav>
-    
+    <!-- Background Particles -->
+    <div id="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/logo.svg" alt="Faylotto Logo" class="logo-img">
+            <span style="
+                font-size: 22px; 
+                font-weight: bold; 
+                background: linear-gradient(90deg, #03a9f4, #f441a5); 
+                -webkit-background-clip: text; 
+                -webkit-text-fill-color: transparent;
+            ">
+                Faylotto
+            </span>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navMenu">
+            <a href="index">Statistics</a>
+            <a href="tools">Tools</a>
+            <a href="#searchInput">Search</a>
+            <a href="https://app.faylotto.xyz">Play Bet</a>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
     <div class="container">
-    <h1>Search Result HK Numbers</h1>
-    <h3>Faylotto Decentralizer Betting Web3 Social</h3>
-    <br>
-    <input type="number" id="searchInput" placeholder="Search Numbers...">
-    <br>
-    <table>
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Bet ID</th>
-                <th>Bet Number</th>
-                <th>Bet Amount</th>
-                <th>Timestamp</th>
-                <th>Block</th>
-            </tr>
-        </thead>
-        <tbody id="betHistoryTable"></tbody>
-    </table>
-    
+        <h1>Search Result HK Numbers</h1>
+        <h3>Faylotto Decentralizer Betting Web3 Social</h3>
+        <br>
+        <input type="number" id="searchInput" placeholder="Search Numbers...">
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Bet ID</th>
+                    <th>Bet Number</th>
+                    <th>Bet Amount</th>
+                    <th>Timestamp</th>
+                    <th>Block</th>
+                </tr>
+            </thead>
+            <tbody id="betHistoryTable"></tbody>
+        </table>
+    </div>
 
     <!-- Footer -->
-<footer>
-    <div class="social-icons">
-        <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-        <a href="https://t.me/FaylottoXyz" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://t.me/Faylotto" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://discord.gg/6uMYTdCZwJ" target="_blank"><i class="fa-brands fa-discord"></i></a>
-        <a href="https://facebook.com/Faylotto" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-    </div>
-    <p>© 2025 Powered By Lotto Chain. All rights reserved. Play responsibly.</p>
-</footer>
-    </div>
+    <footer>
+        <div class="social-icons">
+            <a href="https://x.com/FaylottoXyz" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://t.me/Faylotto" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://t.me/FaylottoXyz" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://discord.gg/6uMYTdCZwJ" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://facebook.com/Faylotto" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <p>© 2025 Powered By Lotto Chain. All rights reserved. Play responsibly.</p>
+    </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
     <script src="script.js"></script>
@@ -369,7 +405,50 @@ window.addEventListener("load", loadBetHistory);
 document.getElementById("searchInput").addEventListener("input", function (e) {
     this.value = this.value.replace(/\D/g, "");
 });
-        
+
+        particlesJS('particles', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: ['#00f0ff', '#ff00ff', '#7b00ff'] },
+                shape: { type: ['circle', 'triangle', 'star'] },
+                opacity: { value: 0.6, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00f0ff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2.5,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 0.7 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('show');
+        }
     </script>
 </body>
 </html>
